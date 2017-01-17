@@ -1,18 +1,24 @@
 const _ = require('lodash');
 var id = 0;
 
-var data = [{ name: 'Nimit Ternary',
-    content: 'Fullstack Academy is awesome! The instructors are just so cool. #fullstacklove #codedreams' }];
+var data = [{
+  name: 'Nimit Ternary',
+  content: 'Fullstack Academy is awesome! The instructors are just so cool. #fullstacklove #codedreams'
+}];
 
-function add (name, content) {
-  data.push({ name: name, id: id++, content: content });
+function add(name, content) {
+  data.push({
+    name: name,
+    id: id++,
+    content: content
+  });
 }
 
-function list () {
+function list() {
   return _.cloneDeep(data);
 }
 
-function find (properties) {
+function find(properties) {
   return _.cloneDeep(_.filter(data, properties));
 }
 
@@ -38,5 +44,5 @@ const getFakeTweet = function() {
 };
 
 for (let i = 0; i < 10; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+  module.exports.add(getFakeName(), getFakeTweet());
 }
