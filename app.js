@@ -1,5 +1,6 @@
 const express = require( 'express' );
 const nunjucks = require("nunjucks");
+const bodyParser = require("body-parser"); 
 const app = express();
 
 app.set('view engine', 'html'); // have res.render work with html files
@@ -13,6 +14,12 @@ app.listen(3000, function(){
   });
 
 app.use(express.static('public'));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.use('/', function (req, res, next) {
  console.log("Request:", req.method, req.path);
