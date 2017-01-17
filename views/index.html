@@ -4,6 +4,7 @@
 
   <div class="page-header">
     <h1>Welcome to Twitter.js!</h1>
+    <h4 class="text-muted">A project made by Elliott Brooks and Aria Moraine at Grace Hopper Academy</h4>
   </div>
   <div class="row">
     <div class="col-md-3">
@@ -28,7 +29,7 @@
       {% for tweet in tweets %}
 
         <li class="tweetbox"><img class="tweetbox"><a href="/users/{{tweet.name}}">{{tweet.name}}</a><br>{{tweet.content}}</li>
-    
+
       {% endfor %}
 
 
